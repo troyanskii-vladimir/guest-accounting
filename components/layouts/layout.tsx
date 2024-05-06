@@ -1,13 +1,14 @@
-import Header from '../modules/header/header';
+import Footer from '../modules/footer/footer'
+import Header from '../modules/header/header'
 
-function Layout({children}: {children: React.ReactNode}) {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
       {children}
-      <div></div>
+      <Footer />
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
