@@ -1,0 +1,19 @@
+.calendar {
+  display: flex;
+}
+
+
+.rooms {
+  width: 120px;
+  margin-right: 20px;
+}
+
+
+.days {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  margin-left: 20px;
+
+  // width: 800px;
+}
