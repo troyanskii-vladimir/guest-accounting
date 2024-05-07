@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import './globalStyles/globals.scss'
-import 'bootstrap/scss/bootstrap.scss'
-import Layout from '@/components/layouts/layout'
+import './globalStyles/globals.css'
+import AppProvider from '@/components/AppContext';
+import Header from '@/components/header/header'
+import Footer from '@/components/footer/footer'
+import { openSansFont } from '@/styles/fonts';
 
 export const metadata: Metadata = {
   title: 'Резервиум',
@@ -15,8 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
-        <Layout children={children} />
+      <body className={openSansFont.className}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )

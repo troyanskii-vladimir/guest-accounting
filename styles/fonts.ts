@@ -1,8 +1,8 @@
-import { Onest } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 
-export const onestFont = Onest({
+export const openSansFont = Open_Sans({
   subsets: ['cyrillic', 'latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '700'],
   style: ['normal'],
   fallback: ['system-ui', 'arial'],
   display: 'swap',

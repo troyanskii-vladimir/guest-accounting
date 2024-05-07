@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.header {
+  background-color: $color-bunting;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  color: $color-white-lilac;
+}
+
+.title-text {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 45px;
+}
+
+.title-comment {
+  position: absolute;
+  left: 75px;
+  top: 5px;
+
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.btn {
+  padding: 8px 25px;
+
+  border: 1px solid $color-hawkes-blue;
+  border-radius: 20px;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-hawkes-blue;
+
+  transition: color $trans-default, background-color $trans-default;
+
+  &:hover {
+    background-color: $color-midnight-express;
+    color: $color-hawkes-blue;
+  }
+
+  &:active {
+    border-color: $color-midnight-express;
+  }
+
+  // &-login {
+
+  // }
+
+  &-register {
+    margin-left: 30px;
+    background-color: $color-hawkes-blue;
+    color: $color-midnight-express;
+  }
+}

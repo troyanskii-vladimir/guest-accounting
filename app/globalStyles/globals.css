@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --color-default-black: #000000;
   --color-default-white: #ffffff;
@@ -21,7 +22,6 @@ body {
   font-weight: 400;
   background-color: #1d2533;
   color: #e8e9ea;
-  // min-height: 100vh;
 }
 
 html {
