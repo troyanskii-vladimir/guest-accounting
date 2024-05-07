@@ -1,6 +1,7 @@
 'use client'
 import Container from '@mui/material/Container'
 import styles from './header.module.scss'
+import container from '@/styles/container.module.scss'
 import Button from '@mui/material/Button'
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
@@ -10,17 +11,22 @@ import IconButton from '@mui/material/IconButton'
 function Header() {
   return (
     <header className={styles['header']}>
-      <Container maxWidth='md'>
-        <Button>
+      <div
+        className={`${container['main-container']} ${styles['header__container']}`}
+      >
+        <div className={styles['title']}>
           <Image
-            src='./img/icons/icon-menu.svg'
-            width={24}
-            height={24}
-            alt='Меню'
+            src='./img/icons/icon-logo.svg'
+            width={50}
+            height={50}
+            alt='Логотип'
           />
-          <span>Меню</span>
-        </Button>
-        <span>Я снимаю</span>
+          <span className={styles['title-text']}>Резервиум</span>
+          <span className={styles['title-comment']}>
+            Управляй отелем онлайн
+          </span>
+        </div>
+
         <Stack spacing={'32px'} direction='row'>
           <IconButton>
             <Badge badgeContent={5} color='secondary'>
@@ -63,7 +69,7 @@ function Header() {
             </Badge>
           </IconButton>
         </Stack>
-      </Container>
+      </div>
     </header>
   )
 }
