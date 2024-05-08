@@ -1,6 +1,5 @@
-export default function RegisterPage(): JSX.Element {
-  return (
-    <h2>Страница регистрации</h2>
-  );
-}
+import Register from "../../components/register/register";
 
+export default function RegisterPage(): JSX.Element {
+  return <Register />;
+}

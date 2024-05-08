@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 2px solid $color-ship-cove;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: $color-white-lilac;
+
+  &:focus {
+    outline: 1px solid $color-white-lilac;
+  }
+}
+
+.button {
+  background-color: $color-ship-cove;
+  width: 100%;
+  color: $color-white-lilac;
+  padding: 15px;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all $trans-default;
+
+  &:hover {
+    background-color: $color-chambray;
+  }
+}
