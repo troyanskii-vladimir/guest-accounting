@@ -7,6 +7,7 @@ import CalendarRooms from "../calendar-rooms/calendar-rooms";
 import CalendarRoomsDays from "../calendar-rooms-days/calendar-rooms-days";
 import container from "@/styles/container.module.scss";
 import CalendarDays from "../calendar-days/calendar-days";
+import { room1 } from "@/constants/data";
 
 function Calendar(): JSX.Element {
   const ref =
@@ -74,12 +75,12 @@ function Calendar(): JSX.Element {
           <CalendarRooms />
         </div>
         <div className={styles["days"]} ref={ref} {...events}>
-          <CalendarDays dates={dates} />
-          <CalendarRoomsDays />
-          <CalendarRoomsDays />
-          <CalendarRoomsDays />
-          <CalendarRoomsDays />
-          <CalendarRoomsDays />
+          <CalendarDays dates={dates} todayDate={"14.05.2024"} />
+          <CalendarRoomsDays roomData={room1} days={dates.length} />
+          <CalendarRoomsDays roomData={room1} days={dates.length} />
+          <CalendarRoomsDays roomData={room1} days={dates.length} />
+          <CalendarRoomsDays roomData={room1} days={dates.length} />
+          <CalendarRoomsDays roomData={room1} days={dates.length} />
         </div>
       </div>
     </div>

@@ -3,14 +3,22 @@
 import styles from "./date-item.module.scss";
 
 type DayItemProps = {
-  text?: string;
+  date: string;
+  todayDate: string;
 };
 
-function DateItem({ text }: DayItemProps): JSX.Element {
+function DateItem({ date, todayDate }: DayItemProps): JSX.Element {
+  const active = date === todayDate;
+
   return (
-    <div className={styles["item"]}>
-      {text && <p>{text}</p>}
-      {!text && <p>Датакк</p>}
+    <div
+      className={
+        active
+          ? `${styles["item"]} ${styles["item-active"]}`
+          : `${styles["item"]}`
+      }
+    >
+      {date.slice(0, 5)}
     </div>
   );
 }

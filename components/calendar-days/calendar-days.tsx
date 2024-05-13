@@ -2,16 +2,17 @@ import DateItem from "../date-item/date-item";
 import DayItem from "../day-item/day-item";
 import styles from "./calendar-days.module.scss";
 
-function CalendarDays({ dates }: CalendarDaysProps): JSX.Element {
+type CalendarDaysProps = {
+  dates: string[];
+  todayDate: string;
+};
+
+function CalendarDays({ dates, todayDate }: CalendarDaysProps): JSX.Element {
   return (
     <div className={styles["days"]}>
-      <DateItem text="Дата" />
-      <DateItem text="Дата" />
-      <DateItem text="Дата" />
-      <DateItem text="Дата" />
-      <DateItem text="Дата" />
-      <DateItem />
-      <DateItem />
+      {dates.map((item) => (
+        <DateItem date={item} todayDate={todayDate} key={item} />
+      ))}
     </div>
   );
 }
