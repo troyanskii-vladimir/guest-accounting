@@ -6,7 +6,7 @@ import { TIME_ONE_DAY, BASE_TIME } from "@/constants/const";
 
 type DayItemProps = {
   booking: Booking;
-  bookingLeft: Booking;
+  bookingLeft?: Booking;
 };
 
 function DayItem({ booking, bookingLeft }: DayItemProps): JSX.Element {

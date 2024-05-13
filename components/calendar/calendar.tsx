@@ -80,7 +80,9 @@ function Calendar(): JSX.Element {
     "30.06.2024",
   ];
 
-  return (
+  
+  
+  return(
     <div className={container["main-container"]}>
       <div className={styles["calendar"]}>
         <div className={styles["rooms"]}>
@@ -95,7 +97,7 @@ function Calendar(): JSX.Element {
           <CalendarRoomsDays roomData={room1} days={dates.length} />
         </div>
       </div>
-    </div>
+    </div>,
   );
 }
 
