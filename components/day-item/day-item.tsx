@@ -1,13 +1,18 @@
-import styles from './day-item.module.scss';
+"use client";
 
+import styles from "./day-item.module.scss";
 
-function DayItem(): JSX.Element {
+type DayItemProps = {
+  text?: string;
+};
+
+function DayItem({ text }: DayItemProps): JSX.Element {
   return (
-    <div className={styles['item']}>
-      Занято
+    <div className={styles["item"]}>
+      {text && <p>{text}</p>}
+      {!text && <p>Занято</p>}
     </div>
   );
 }
-
 
 export default DayItem;

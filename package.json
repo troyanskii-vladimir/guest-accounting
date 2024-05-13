@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.0.0",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.16",
+    "@mui/icons-material": "^5.15.17",
+    "@mui/material": "^5.15.17",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "bcrypt": "^5.1.1",

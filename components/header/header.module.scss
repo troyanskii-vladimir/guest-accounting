@@ -1,7 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-
 .header {
   background-color: $color-bunting;
 }
@@ -36,6 +35,10 @@
   font-size: 12px;
 }
 
+.nav-links {
+  display: flex;
+}
+
 .btn {
   padding: 8px 25px;
 
@@ -46,8 +49,11 @@
   font-size: 16px;
   font-weight: 500;
   color: $color-hawkes-blue;
+  cursor: pointer;
 
-  transition: color $trans-default, background-color $trans-default;
+  transition:
+    color $trans-default,
+    background-color $trans-default;
 
   &:hover {
     background-color: $color-midnight-express;
@@ -66,5 +72,19 @@
     margin-left: 30px;
     background-color: $color-hawkes-blue;
     color: $color-midnight-express;
+  }
+
+  &-nav {
+    margin-left: 15px;
+    background-color: $color-hawkes-blue;
+    color: $color-midnight-express;
+    padding: 5px;
+    // display: block;
+    // position: relative;
+    // height: 40px;
+    // width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
