@@ -31,16 +31,16 @@ const booking1: Booking = {
   id: "asd1233",
   roomId: "1233",
   guest: guest1,
-  dateFrom: "1700251003843",
-  dateTo: "1700821093843",
+  dateFrom: "1715904000000",
+  dateTo: "1717545600000",
 };
 
 const booking2: Booking = {
   id: "asd123",
   roomId: "1233",
   guest: guest1,
-  dateFrom: "1700851003843",
-  dateTo: "1700851093843",
+  dateFrom: "1718496000000",
+  dateTo: "1719187200000",
 };
 
 export const room1: Room = {

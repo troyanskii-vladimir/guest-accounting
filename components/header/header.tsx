@@ -19,7 +19,7 @@ function Header() {
       <div
         className={`${container["main-container"]} ${styles["header__container"]}`}
       >
-        <Link href={AppRoute.Main} className={styles["title"]}>
+        <Link className={styles["title"]} href={AppRoute.Main}>
           <Image
             src="./img/icons/icon-logo.svg"
             width={50}
