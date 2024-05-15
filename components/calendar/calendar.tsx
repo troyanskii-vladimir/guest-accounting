@@ -79,7 +79,8 @@ function Calendar(): JSX.Element {
     "29.06.2024",
     "30.06.2024",
   ];
-
+  const datesBefore = [];
+  const datesAfter = [];
   
   
   return(

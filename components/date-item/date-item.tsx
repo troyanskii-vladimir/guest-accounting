@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import styles from "./date-item.module.scss";
 
 type DayItemProps = {
@@ -9,9 +10,26 @@ type DayItemProps = {
 
 function DateItem({ date, todayDate }: DayItemProps): JSX.Element {
   const active = date === todayDate;
+  const ref = useRef(null);
+  const test = () => {
+    console.log("test");
+    console.log(ref.current);
+    ref?.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "start",
+    });
+  };
+
+  useEffect(() => {
+    if (active) {
+      setTimeout(() => test(), 1000);
+    }
+  }, []);
 
   return (
     <div
+      ref={active ? ref : null}
       className={
         active
           ? `${styles["item"]} ${styles["item-active"]}`
