@@ -23,7 +23,7 @@ function DateItem({ date, todayDate }: DayItemProps): JSX.Element {
 
   useEffect(() => {
     if (active) {
-      setTimeout(() => test(), 1000);
+      setTimeout(() => test(), 300);
     }
   }, []);
 

@@ -35,7 +35,6 @@ function DayItem({ booking, bookingLeft }: DayItemProps): JSX.Element {
       <div style={{ position: "absolute" }}>
         <p>{booking.guest.name}</p>
         <p>От: {formatDateFromTimeStamp(booking.dateFrom)}</p>
-        <p>До: {formatDateFromTimeStamp(booking.dateTo)}</p>
       </div>
     </div>
   );
