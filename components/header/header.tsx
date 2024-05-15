@@ -10,7 +10,11 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
 import { Tooltip } from "@mui/material";
 
-function Header() {
+type HeaderProps = {
+  setActiveAddRoom: (value: boolean) => void;
+};
+
+function Header({ setActiveAddRoom }: HeaderProps) {
   const [isLogged, setIsLogged] = useState<boolean>(true);
   const [userName, setUserName] = useState<string>("Владимир");
 
@@ -62,7 +66,10 @@ function Header() {
                 </button>
               </Tooltip>
               <Tooltip title="Добавить комнату" followCursor>
-                <button className={`${styles["btn"]} ${styles["btn-nav"]}`}>
+                <button
+                  onClick={() => setActiveAddRoom(true)}
+                  className={`${styles["btn"]} ${styles["btn-nav"]}`}
+                >
                   <AddHomeOutlinedIcon sx={{ fontSize: 26 }} />
                 </button>
               </Tooltip>
