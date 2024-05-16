@@ -26,6 +26,10 @@
   &:focus {
     outline: 1px solid $color-white-lilac;
   }
+
+  &:disabled {
+    background-color: #333;
+  }
 }
 
 .button {
@@ -41,5 +45,9 @@
 
   &:hover {
     background-color: $color-chambray;
+  }
+
+  &:disabled {
+    background-color: #333;
   }
 }
