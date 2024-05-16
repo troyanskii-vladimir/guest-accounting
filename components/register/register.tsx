@@ -13,6 +13,13 @@ function Register(): JSX.Element {
 
   const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    fetch('/api/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        email, password
+      }),
+      headers: {'Content-Type': 'application/json'},
+    });
   };
 
   return (
