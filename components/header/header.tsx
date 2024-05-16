@@ -1,5 +1,5 @@
 "use client";
-import { AppRoute } from "@/constants/config";
+import { AppRoute, AuthorizationStatus } from "@/constants/config";
 import styles from "./header.module.scss";
 import container from "@/styles/container.module.scss";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import AddHomeOutlinedIcon from "@mui/icons-material/AddHomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
 import { Tooltip } from "@mui/material";
+import { signOut, useSession } from "next-auth/react";
 
 type HeaderProps = {
   setActiveAddRoom: (value: boolean) => void;
@@ -17,6 +18,10 @@ type HeaderProps = {
 function Header({ setActiveAddRoom }: HeaderProps) {
   const [isLogged, setIsLogged] = useState<boolean>(true);
   const [userName, setUserName] = useState<string>("Владимир");
+
+  const session = useSession();
+  const status = session.status;
+  console.log(status)
 
   return (
     <header className={styles["header"]}>
@@ -36,7 +41,7 @@ function Header({ setActiveAddRoom }: HeaderProps) {
           </span>
         </Link>
         <nav className={styles["nav-links"]}>
-          {!isLogged && (
+          {status === AuthorizationStatus.NoAuth && (
             <>
               <Link
                 className={`${styles["btn"]} ${styles["btn-login"]}`}
@@ -52,7 +57,7 @@ function Header({ setActiveAddRoom }: HeaderProps) {
               </Link>
             </>
           )}
-          {isLogged && (
+          {status === AuthorizationStatus.Auth && (
             <>
               <Link
                 className={`${styles["btn"]} ${styles["btn-login"]}`}
@@ -81,6 +86,14 @@ function Header({ setActiveAddRoom }: HeaderProps) {
                   <FaceOutlinedIcon sx={{ fontSize: 26 }} />
                 </Link>
               </Tooltip>
+              {/* <Tooltip title="Выйти" followCursor>
+                <button
+                  className={`${styles["btn"]} ${styles["btn-nav"]}`}
+                  onClick={() => signOut()}
+                >
+                  <FaceOutlinedIcon sx={{ fontSize: 26 }} />
+                </button>
+              </Tooltip> */}
             </>
           )}
         </nav>

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globalStyles/globals.css";
-import AppProvider from "@/components/AppContext";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import { openSansFont } from "@/styles/fonts";
 import ClientLayout from "@/components/client-layout/client-layout";
 
