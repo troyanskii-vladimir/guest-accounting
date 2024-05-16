@@ -28,7 +28,8 @@
   }
 
   &:disabled {
-    background-color: #333;
+    background-color: $color-transparent;
+    border: 2px solid $color-midnight-express;
   }
 }
 
@@ -48,6 +49,39 @@
   }
 
   &:disabled {
-    background-color: #333;
+    background-color: $color-transparent;
+    cursor: default;
   }
+}
+
+.success__created {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background-color: $color-ocean-green;
+
+  color: $color-bunting;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  a {
+    font-weight: 700;
+    color: $color-bunting;
+    text-decoration: underline;
+  }
+}
+
+.error__created {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background-color: $color-night-shadz;
+
+  color: $color-hawkes-blue;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }

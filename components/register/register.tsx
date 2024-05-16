@@ -3,26 +3,36 @@
 import { FormEvent, useState } from "react";
 import styles from "./register.module.scss";
 import container from "@/styles/container.module.scss";
-import { ApiRoute } from "@/constants/config";
+import { ApiRoute, AppRoute } from "@/constants/config";
+import Link from "next/link";
 
 function Register(): JSX.Element {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [creatingUser, setCreatingUser] = useState<boolean>(false);
-  const [userCreated, setUserCreate] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [isError, setIsError] = useState<string>("");
+  const [isError, setIsError] = useState<boolean>(false);
 
   const handleFormSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     setCreatingUser(true);
-    await fetch(ApiRoute.Register, {
+    setIsError(false);
+    setIsSuccess(false);
+    const response = await fetch(ApiRoute.Register, {
       method: 'POST',
       body: JSON.stringify({
-        email, password
+        email,
+        password,
       }),
       headers: {'Content-Type': 'application/json'},
     });
+
+    if (response.ok) {
+      setIsSuccess(true);
+    } else {
+      setIsError(true);
+    }
+
     setCreatingUser(false);
   };
 
@@ -30,6 +40,20 @@ function Register(): JSX.Element {
     <section className={styles["form-container"]}>
       <div className={container["main-container"]}>
         <h2 className={styles["title"]}>Зарегестрироватсья</h2>
+        {
+          isSuccess &&
+          <div className={styles['success__created']}>
+            Пользователь зарегестрирован. Теперь вы можете <Link href={AppRoute.Login}>войти</Link> в аккаунт
+          </div>
+        }
+        {
+          isError &&
+          <div className={styles['error__created']}>
+            Ошибка создания пользователя.
+            <br />
+            Попробуйте позднее
+          </div>
+        }
         <form className={styles["form"]} onSubmit={handleFormSubmit}>
           <label>Email: </label>
           <input
