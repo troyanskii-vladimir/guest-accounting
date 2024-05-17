@@ -13,17 +13,18 @@ function DateItem({ date, todayDate }: DayItemProps): JSX.Element {
   let preActive = false;
 
   if (date.getMonth() === todayDate.getMonth()) {
-    console.log(date.getDate());
     preActive = date.getDate() === todayDate.getDate() - 1;
   }
 
   const ref = useRef(null);
   const test = () => {
-    ref?.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "start",
-    });
+    if (preActive) {
+      ref?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
   };
 
   useEffect(() => {

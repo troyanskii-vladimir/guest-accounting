@@ -32,10 +32,11 @@ function DayItem({ booking, bookingLeft }: DayItemProps): JSX.Element {
       className={styles["item"]}
       style={{ minWidth: `${bookingLength}px`, marginLeft: `${timeLength}px` }}
     >
-      <div style={{ position: "absolute" }}>
+      {/* <div style={{ position: "absolute" }}>
         <p>{booking.guest.name}</p>
         <p>От: {formatDateFromTimeStamp(booking.dateFrom)}</p>
-      </div>
+      </div> */}
+      <div className={styles["booking"]}>Бронирование</div>
     </div>
   );
 }
