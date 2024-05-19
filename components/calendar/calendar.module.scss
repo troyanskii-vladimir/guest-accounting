@@ -6,10 +6,10 @@
   position: relative;
 }
 
-.rooms {
-  width: 120px;
-  margin-right: 20px;
-}
+// .rooms {
+//   width: 120px;
+//   margin-right: 20px;
+// }
 
 .days {
   display: flex;
@@ -17,27 +17,27 @@
   overflow-x: scroll;
   margin-left: 20px;
 
-  // width: 800px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 140px;
-    width: calc(100% - 140px);
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      #1d2533,
-      transparent 10%,
-      transparent 90%,
-      #1d2533
-    );
-  }
+  // &::after {
+  //   content: "";
+  //   // z-index: 1100;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 140px;
+  //   width: calc(100% - 140px);
+  //   height: 100%;
+  //   background: linear-gradient(
+  //     to right,
+  //     #1d2533,
+  //     transparent 10%,
+  //     transparent 90%,
+  //     #1d2533
+  //   );
+  // }
 
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+    border-radius: 5px;
   }
 
   &::-webkit-scrollbar-thumb {

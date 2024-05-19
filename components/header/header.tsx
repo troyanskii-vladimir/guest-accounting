@@ -8,6 +8,7 @@ import { useState } from "react";
 import AddHomeOutlinedIcon from "@mui/icons-material/AddHomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { Tooltip } from "@mui/material";
 import { signOut, useSession } from "next-auth/react";
 
@@ -21,7 +22,6 @@ function Header({ setActiveAddRoom }: HeaderProps) {
 
   const session = useSession();
   const status = session.status;
-  console.log(status)
 
   return (
     <header className={styles["header"]}>
@@ -86,14 +86,14 @@ function Header({ setActiveAddRoom }: HeaderProps) {
                   <FaceOutlinedIcon sx={{ fontSize: 26 }} />
                 </Link>
               </Tooltip>
-              {/* <Tooltip title="Выйти" followCursor>
+              <Tooltip title="Выйти" followCursor>
                 <button
                   className={`${styles["btn"]} ${styles["btn-nav"]}`}
                   onClick={() => signOut()}
                 >
-                  <FaceOutlinedIcon sx={{ fontSize: 26 }} />
+                  <LogoutOutlinedIcon sx={{ fontSize: 26 }} />
                 </button>
-              </Tooltip> */}
+              </Tooltip>
             </>
           )}
         </nav>

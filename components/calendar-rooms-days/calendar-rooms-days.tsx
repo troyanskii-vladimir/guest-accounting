@@ -7,13 +7,9 @@ const DBooking = dynamic(() => import("../day-item/day-item"), { ssr: false });
 
 type CalendarRoomsDaysProps = {
   roomData: Room;
-  days: number;
 };
 
-function CalendarRoomsDays({
-  roomData,
-  days,
-}: CalendarRoomsDaysProps): JSX.Element {
+function CalendarRoomsDays({ roomData }: CalendarRoomsDaysProps): JSX.Element {
   return (
     <div className={styles["rooms-days"]}>
       {roomData.bookings.map((booking, i, arr) => (

@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '',
+  basePath: "",
   // output: 'export', // <=== enables static exports
   reactStrictMode: true,
-}
+};
 
-export default nextConfig
+export default nextConfig;

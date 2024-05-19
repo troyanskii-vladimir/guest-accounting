@@ -1,17 +1,17 @@
-import DateItem from "../date-item/date-item";
-import DayItem from "../day-item/day-item";
+import dynamic from "next/dynamic";
 import styles from "./calendar-days.module.scss";
+const Test = dynamic(() => import("../date-item/date-item"), { ssr: false });
 
 type CalendarDaysProps = {
-  dates: string[];
-  todayDate: string;
+  dates: Date[];
+  todayDate: Date;
 };
 
 function CalendarDays({ dates, todayDate }: CalendarDaysProps): JSX.Element {
   return (
     <div className={styles["days"]}>
       {dates.map((item) => (
-        <DateItem date={item} todayDate={todayDate} key={item} />
+        <Test date={item} todayDate={todayDate} key={item} />
       ))}
     </div>
   );
