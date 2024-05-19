@@ -33,7 +33,7 @@ function Header({ setActiveAddRoom }: HeaderProps) {
             src="./img/icons/icon-logo.svg"
             width={50}
             height={50}
-            alt="Логотип"
+            alt="Логотип" 
           />
           <span className={styles["title-text"]}>Резервиум</span>
           <span className={styles["title-comment"]}>
