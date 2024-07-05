@@ -18,7 +18,7 @@ type HeaderProps = {
 
 function Header({ setActiveAddRoom }: HeaderProps) {
   const [isLogged, setIsLogged] = useState<boolean>(true);
-  const [userName, setUserName] = useState<string>("Владимир");
+  const [userName, setUserName] = useState<string>("Владимир"); 
 
   const session = useSession();
   const status = session.status;
@@ -33,7 +33,7 @@ function Header({ setActiveAddRoom }: HeaderProps) {
             src="./img/icons/icon-logo.svg"
             width={50}
             height={50}
-            alt="Логотип" 
+            alt="Логотип"
           />
           <span className={styles["title-text"]}>Резервиум</span>
           <span className={styles["title-comment"]}>
