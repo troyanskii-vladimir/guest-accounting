@@ -18,13 +18,13 @@ type HeaderProps = {
 
 function Header({ setActiveAddRoom }: HeaderProps) {
   const [isLogged, setIsLogged] = useState<boolean>(true);
-  const [userName, setUserName] = useState<string>("Владимир"); 
+  const [userName, setUserName] = useState<string>("Владимир");
 
   const session = useSession();
   const status = session.status;
 
   return (
-    <header className={styles["header"]}>
+    <header className={styles["header"]}> 
       <div
         className={`${container["main-container"]} ${styles["header__container"]}`}
       >
