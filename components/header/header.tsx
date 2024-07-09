@@ -21,10 +21,10 @@ function Header({ setActiveAddRoom }: HeaderProps) {
   const [userName, setUserName] = useState<string>("Владимир");
 
   const session = useSession();
-  const status = session.status;
+  const status = session.status; 
 
   return (
-    <header className={styles["header"]}>  
+    <header className={styles["header"]}>
       <div
         className={`${container["main-container"]} ${styles["header__container"]}`}
       >
