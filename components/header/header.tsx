@@ -28,7 +28,7 @@ function Header({ setActiveAddRoom }: HeaderProps) {
       <div
         className={`${container["main-container"]} ${styles["header__container"]}`}
       >
-        <Link className={styles["title"]} href={AppRoute.Main}>
+        <Link className={styles["title"]} href={AppRoute.Main}> 
           <Image
             src="./img/icons/icon-logo.svg"
             width={50}
